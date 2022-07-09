@@ -33,8 +33,8 @@ public class ChopperPro : MonoBehaviour
             fly -= 0.00001f;
             Propeller.transform.Rotate(0f, speed, 0f);
             Propeller2.transform.Rotate(0f, speed, 0f);
-            if (speed < 0f) speed = 0f;
-            if (fly < 0f) fly = 0f;
+            if (speed <= 0f) speed = 0f;
+            if (fly <= 0f) fly = 0f;
             Chopper.transform.position = Chopper.transform.position + new Vector3(0, fly, 0);
         }
     }
