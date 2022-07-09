@@ -19,10 +19,10 @@ public class ChopperPro : MonoBehaviour
             {
                 Propeller2.transform.Rotate(0f, speed-5, 0f);
             }
-            if(speed > 20f)
+            if(speed >= 15f)
             {
-                speed = 20f;
-                fly += 0.00008f;
+                speed = 15f;
+                fly += 0.0008f;
 
                     Chopper.transform.position = Chopper.transform.position + new Vector3(0, fly, 0);
             }
