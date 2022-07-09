@@ -7,9 +7,17 @@ public class ChopperPro : MonoBehaviour
     public GameObject Propeller;
     public GameObject Propeller2;
     public GameObject Chopper;
+    public Rigidbody rigd;
     public float speed = 0f;
     public float fly = 0f;
     public float RotateSpeed = 0f;
+
+    float gravityScale = 9.8f;
+
+    private void Start()
+    {
+        rigd = Chopper.GetComponent<Rigidbody>();
+;    }
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
@@ -22,10 +30,15 @@ public class ChopperPro : MonoBehaviour
             }
             if(speed >= 15f)
             {
-                speed = 15f;
-                fly += 0.008f;
 
-                    Chopper.transform.position = Chopper.transform.position + new Vector3(0, fly, 0);
+                fly += 0.1f * gravityScale;
+
+                rigd.velocity += new Vector3(0, fly * Time.deltaTime, 0);
+            }
+
+            if (speed >= 25f)
+            {
+                speed = 25f;
             }
         }
         else
@@ -34,7 +47,7 @@ public class ChopperPro : MonoBehaviour
             Propeller.transform.Rotate(0f, speed, 0f);
             Propeller2.transform.Rotate(0f, speed, 0f);
             if (speed <= 0f) speed = 0f;
-            if (fly <= 0f) fly = 0f;
+            fly = 0f;
         }
         if(Input.GetKey(KeyCode.S))
         {
