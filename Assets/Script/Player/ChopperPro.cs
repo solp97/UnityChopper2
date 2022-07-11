@@ -18,7 +18,6 @@ public class ChopperPro : MonoBehaviour
     private void Start()
     {
         rigd = Chopper.GetComponent<Rigidbody>();
-        
     }
     void Update()
     {
@@ -26,17 +25,20 @@ public class ChopperPro : MonoBehaviour
         {
             EngineStart = !EngineStart;
         }
+
         if (Input.GetKey(KeyCode.W) && EngineStart)
         {
             speed += 0.03f;
             Propeller.transform.Rotate(0f, speed, 0f);
-            if (speed >= 25f)
+
+            if (speed >= 16f)
             {
-                speed = 25f;
+                speed = 16f;
             }
             else if (speed >= 15f)
             {
                 fly += 0.1f * gravityScale;
+                rigd.useGravity = false;
 
                 rigd.velocity += new Vector3(0, fly * Time.deltaTime, 0);
             }
@@ -53,16 +55,19 @@ public class ChopperPro : MonoBehaviour
             if (speed <= 0f) speed = 0f;
             fly = 0f;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) && EngineStart)
         {
-            fly -= 0.0005f;
+            fly -= 0.5f;
+            rigd.velocity += new Vector3(0, fly * Time.deltaTime, 0);
+            rigd.useGravity = true;
+
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && EngineStart)
         {
             RotateSpeed = -0.5f;
             Chopper.transform.Rotate(0f, RotateSpeed, 0f);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && EngineStart)
         {
             RotateSpeed = 0.5f;
             Chopper.transform.Rotate(0f, RotateSpeed, 0f);
