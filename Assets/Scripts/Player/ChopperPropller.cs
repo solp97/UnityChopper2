@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class ChopperPropller : MonoBehaviour
 {
-    public GameObject Propeller1;
-    public GameObject Propeller2;
-    public GameObject Chopper;
+    public GameObject propeller1;
+    public GameObject propeller2;
+    public GameObject chopper;
     private Rigidbody rigd;
     public float speed = 0f;
     public float fly = 0f;
-    public float RotateSpeed = 0f;
+    public float rotateSpeed = 0f;
     public bool EngineStart = false;
 
     float gravityScale = 9.8f;
 
     private void Start()
     {
-        rigd = Chopper.GetComponent<Rigidbody>();
+        rigd = chopper.GetComponent<Rigidbody>();
     }
     void Update()
     {
@@ -29,7 +29,7 @@ public class ChopperPropller : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && EngineStart)
         {
             speed += 0.03f;
-            Propeller1.transform.Rotate(0f, speed, 0f);
+            propeller1.transform.Rotate(0f, speed, 0f);
 
             if (speed >= 16f)
             {
@@ -44,14 +44,14 @@ public class ChopperPropller : MonoBehaviour
             }
             else if (speed > 5f)
             {
-                Propeller2.transform.Rotate(0f, speed - 5, 0f);
+                propeller2.transform.Rotate(0f, speed - 5, 0f);
             }
         }
         else
         {
             speed -= 0.01f;
-            Propeller1.transform.Rotate(0f, speed, 0f);
-            Propeller2.transform.Rotate(0f, speed, 0f);
+            propeller1.transform.Rotate(0f, speed, 0f);
+            propeller2.transform.Rotate(0f, speed, 0f);
             if (speed <= 0f) speed = 0f;
             fly = 0f;
         }
@@ -64,13 +64,13 @@ public class ChopperPropller : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A) && EngineStart)
         {
-            RotateSpeed = -0.5f;
-            Chopper.transform.Rotate(0f, RotateSpeed, 0f);
+            rotateSpeed = -0.5f;
+            chopper.transform.Rotate(0f, rotateSpeed, 0f);
         }
         if (Input.GetKey(KeyCode.D) && EngineStart)
         {
-            RotateSpeed = 0.5f;
-            Chopper.transform.Rotate(0f, RotateSpeed, 0f);
+            rotateSpeed = 0.5f;
+            chopper.transform.Rotate(0f, rotateSpeed, 0f);
         }
     }
 }
