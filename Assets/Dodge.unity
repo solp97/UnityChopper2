@@ -1272,12 +1272,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb9a26a75df5cc47962de6ee1424ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Propeller1: {fileID: 923523434}
-  Propeller2: {fileID: 950025401}
-  Chopper: {fileID: 2062277332}
+  propeller1: {fileID: 923523434}
+  propeller2: {fileID: 950025401}
+  chopper: {fileID: 2062277332}
   speed: 0
   fly: 0
-  RotateSpeed: 0
+  rotateSpeed: 0
   EngineStart: 0
 --- !u!1 &950025401
 GameObject:
