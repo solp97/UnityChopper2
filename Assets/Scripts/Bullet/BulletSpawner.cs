@@ -30,7 +30,7 @@ public class BulletSpawner : MonoBehaviour
             transform.LookAt(Player);
             if (timer >= randomNumber)
             {
-                Instantiate(BulletPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+                Instantiate(BulletPrefab,transform.position, transform.rotation);
                 timer = 0;
                 randomNumber = Random.Range(0f, 3f);
             }

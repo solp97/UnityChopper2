@@ -33,11 +33,8 @@ public class PlayerMove : MonoBehaviour
 
         }
 
-       /* if (_input.Up)
-        {
-            _rb.AddForce(0f, 0f, speed);
-        }
 
+/*
         if (_input.Down)
         {
             _rb.AddForce(0f, 0f, -speed);
@@ -57,5 +54,12 @@ public class PlayerMove : MonoBehaviour
         {
             _rb.AddForce(0f, 15f, 0f,ForceMode.);
         }*/
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag == "Chopper" && Input.GetKey(KeyCode.F))
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 }

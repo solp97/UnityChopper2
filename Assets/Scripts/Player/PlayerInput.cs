@@ -17,6 +17,7 @@ public class PlayerInput : MonoBehaviour
         {
             X = Input.GetAxis("Horizontal");
             Y = Input.GetAxis("Vertical");
+
             /*Up = Input.GetKey(KeyCode.UpArrow);
             Down = Input.GetKey(KeyCode.DownArrow);
             Left = Input.GetKey(KeyCode.LeftArrow);
