@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChopperPro : MonoBehaviour
+public class ChopperPropller : MonoBehaviour
 {
-    public GameObject Propeller;
+    public GameObject Propeller1;
     public GameObject Propeller2;
     public GameObject Chopper;
     private Rigidbody rigd;
@@ -29,7 +29,7 @@ public class ChopperPro : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && EngineStart)
         {
             speed += 0.03f;
-            Propeller.transform.Rotate(0f, speed, 0f);
+            Propeller1.transform.Rotate(0f, speed, 0f);
 
             if (speed >= 16f)
             {
@@ -50,7 +50,7 @@ public class ChopperPro : MonoBehaviour
         else
         {
             speed -= 0.01f;
-            Propeller.transform.Rotate(0f, speed, 0f);
+            Propeller1.transform.Rotate(0f, speed, 0f);
             Propeller2.transform.Rotate(0f, speed, 0f);
             if (speed <= 0f) speed = 0f;
             fly = 0f;
