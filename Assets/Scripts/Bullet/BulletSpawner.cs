@@ -13,7 +13,7 @@ public class BulletSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        randomNumber = Random.Range(0f, 10f);
+        randomNumber = Random.Range(1f, 3f);
     }
 
     // Update is called once per frame
