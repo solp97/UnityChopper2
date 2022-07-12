@@ -55,6 +55,7 @@ public class ChopperPropller : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.S) && EngineStart)
         {
+            propellerRotateSpeed -= 0.03f;
             fly -= 0.5f;
             rigd.velocity += new Vector3(0, fly * Time.deltaTime, 0);
             rigd.useGravity = true;
