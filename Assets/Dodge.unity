@@ -759,7 +759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 8573054025156534241, guid: 38f43c7b3c10168499775174e5662903, type: 3}
   Player: {fileID: 689467571}
-  RotateSpeed: 2
+  RotateSpeed: 0.1
   randomNumber: 0
   BarrelEnd: {fileID: 613429566}
 --- !u!136 &613429563
@@ -903,6 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d2a0e429e711048bd460d5d10ade77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 0
 --- !u!54 &689467567
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1339,7 +1340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 8573054025156534241, guid: 38f43c7b3c10168499775174e5662903, type: 3}
   Player: {fileID: 689467571}
-  RotateSpeed: 2
+  RotateSpeed: 1
   randomNumber: 0
   BarrelEnd: {fileID: 845467798}
 --- !u!136 &845467795
@@ -2275,7 +2276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 8573054025156534241, guid: 38f43c7b3c10168499775174e5662903, type: 3}
   Player: {fileID: 689467571}
-  RotateSpeed: 2
+  RotateSpeed: 0.5
   randomNumber: 0
   BarrelEnd: {fileID: 1088128616}
 --- !u!136 &1088128613
@@ -2406,7 +2407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 8573054025156534241, guid: 38f43c7b3c10168499775174e5662903, type: 3}
   Player: {fileID: 689467571}
-  RotateSpeed: 2
+  RotateSpeed: 1
   randomNumber: 0
   BarrelEnd: {fileID: 1332878833}
 --- !u!136 &1332878830
@@ -2482,7 +2483,7 @@ Transform:
   m_GameObject: {fileID: 1332878827}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 19.47, y: 1, z: -23.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2091832457}
@@ -3577,7 +3578,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb2ee2f568ac1c42858a07c7062d274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Chopper: {fileID: 689467571}
+  Chopper: {fileID: 2062277334}
+  Player: {fileID: 689467571}
+  getAlive: 0
 --- !u!1 &1947573972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3913,11 +3916,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2062277334}
   - component: {fileID: 2062277333}
-  - component: {fileID: 2062277335}
   - component: {fileID: 2062277336}
+  - component: {fileID: 2062277337}
   m_Layer: 0
   m_Name: Chopper
-  m_TagString: Untagged
+  m_TagString: Chopper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3962,19 +3965,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2062277335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062277332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15995cb1fe12a8548afba2085018adf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 0.04
 --- !u!114 &2062277336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3988,6 +3978,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChopperLights: {fileID: 2017345772}
+--- !u!135 &2062277337
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062277332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2091832456
 GameObject:
   m_ObjectHideFlags: 0

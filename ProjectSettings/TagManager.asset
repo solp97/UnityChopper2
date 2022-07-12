@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - Wall
+  - Chopper
   layers:
   - Default
   - TransparentFX
