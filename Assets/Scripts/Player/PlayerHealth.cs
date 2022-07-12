@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            Die();
-        }
+        if(other.tag == "Bullet") Die();
+/*
+        if (null == other.GetComponent<Bullet>()) Die();*/
     }
     public void Die()
     {

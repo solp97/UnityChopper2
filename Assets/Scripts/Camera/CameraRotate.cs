@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraRotate : MonoBehaviour
 {
     public Transform Chopper;
-    // Update is called once per frame
     void Update()
     {
         transform.LookAt(Chopper);
