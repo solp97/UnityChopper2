@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public bool isAlive;
     public bool isRide;
+    public Gamemanager GameManager;
     private void Start()
     {
         isAlive = true;
@@ -18,15 +19,13 @@ public class PlayerHealth : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Chopper" && Input.GetKey(KeyCode.F))
-        {
-            Ride();
-        }
+        if (other.gameObject.tag == "Chopper" && Input.GetKey(KeyCode.F)) Ride();
     }
     public void Die()
     {
         gameObject.SetActive(false);
         isAlive = false;
+        GameManager.End();
     }
 
     public void Ride()

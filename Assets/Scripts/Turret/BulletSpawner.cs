@@ -20,6 +20,7 @@ public class BulletSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         timer += Time.deltaTime;
         transform.Rotate(0f, RotateSpeed, 0f);
 
