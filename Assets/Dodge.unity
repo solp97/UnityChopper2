@@ -758,10 +758,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 8573054025156534241, guid: 38f43c7b3c10168499775174e5662903, type: 3}
-  Player: {fileID: 689467571}
+  Target: {fileID: 689467571}
   RotateSpeed: 0.1
   randomNumber: 0
-  BarrelEnd: {fileID: 613429566}
 --- !u!136 &613429563
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -904,6 +903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlive: 0
+  isRide: 0
 --- !u!54 &689467567
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1339,10 +1339,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 8573054025156534241, guid: 38f43c7b3c10168499775174e5662903, type: 3}
-  Player: {fileID: 689467571}
+  Target: {fileID: 689467571}
   RotateSpeed: 1
   randomNumber: 0
-  BarrelEnd: {fileID: 845467798}
 --- !u!136 &845467795
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2275,10 +2274,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 8573054025156534241, guid: 38f43c7b3c10168499775174e5662903, type: 3}
-  Player: {fileID: 689467571}
+  Target: {fileID: 689467571}
   RotateSpeed: 0.5
   randomNumber: 0
-  BarrelEnd: {fileID: 1088128616}
 --- !u!136 &1088128613
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2406,10 +2404,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 8573054025156534241, guid: 38f43c7b3c10168499775174e5662903, type: 3}
-  Player: {fileID: 689467571}
+  Target: {fileID: 689467571}
   RotateSpeed: 1
   randomNumber: 0
-  BarrelEnd: {fileID: 1332878833}
 --- !u!136 &1332878830
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2560,10 +2557,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 8573054025156534241, guid: 38f43c7b3c10168499775174e5662903, type: 3}
-  Player: {fileID: 689467571}
+  Target: {fileID: 689467571}
   RotateSpeed: 2
   randomNumber: 0
-  BarrelEnd: {fileID: 1389510309}
 --- !u!136 &1389510306
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3581,6 +3577,7 @@ MonoBehaviour:
   Chopper: {fileID: 2062277334}
   Player: {fileID: 689467571}
   getAlive: 1
+  getRide: 0
 --- !u!1 &1947573972
 GameObject:
   m_ObjectHideFlags: 0

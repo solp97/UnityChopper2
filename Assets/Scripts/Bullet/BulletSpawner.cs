@@ -26,7 +26,7 @@ public class BulletSpawner : MonoBehaviour
     {
         if (other.gameObject.tag =="Player")
         {
-            transform.LookAt(Player);
+            transform.LookAt(Target);
             if (timer >= randomNumber)
             {
                 Instantiate(BulletPrefab,transform.position, transform.rotation);
