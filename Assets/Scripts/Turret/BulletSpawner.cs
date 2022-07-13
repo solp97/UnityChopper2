@@ -9,10 +9,12 @@ public class BulletSpawner : MonoBehaviour
     public Transform Target;
     public float RotateSpeed = 4f;
     public float randomNumber;
+    public float randomMin = 1f;
+    public float randomMax = 3f;
     // Start is called before the first frame update
     void Start()
     {
-        randomNumber = Random.Range(1f, 3f);
+        randomNumber = Random.Range(randomMin, randomMax);
     }
 
     // Update is called once per frame
@@ -31,7 +33,7 @@ public class BulletSpawner : MonoBehaviour
             {
                 Instantiate(BulletPrefab,transform.position, transform.rotation);
                 timer = 0;
-                randomNumber = Random.Range(1f, 3f);
+                randomNumber = Random.Range(randomMin, randomMax);
             }
         }
 
