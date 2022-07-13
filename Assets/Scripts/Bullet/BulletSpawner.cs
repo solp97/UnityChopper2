@@ -6,7 +6,7 @@ public class BulletSpawner : MonoBehaviour
 {
     public GameObject BulletPrefab;
     private float timer;
-    public Transform Player;
+    public Transform Target;
     public float RotateSpeed = 4f;
     public float randomNumber;
     // Start is called before the first frame update
