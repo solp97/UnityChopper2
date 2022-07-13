@@ -16,6 +16,6 @@ public class CameraRotate : MonoBehaviour
     }
     void Update()
     {
-        transform.LookAt(getAlive ? Chopper : Player);
+        transform.LookAt(getAlive ? Player : Chopper);
     }
 }
