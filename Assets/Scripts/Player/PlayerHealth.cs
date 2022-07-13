@@ -5,19 +5,33 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public bool isAlive;
+    public bool isRide;
     private void Start()
     {
         isAlive = true;
+        isRide = false;
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Bullet") Die();
-/*
-        if (null == other.GetComponent<Bullet>()) Die();*/
+        // if (null == other.GetComponent<Bullet>()) Die();
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Chopper" && Input.GetKey(KeyCode.F))
+        {
+            Ride();
+        }
     }
     public void Die()
     {
         gameObject.SetActive(false);
         isAlive = false;
+    }
+
+    public void Ride()
+    {
+        gameObject.SetActive(false);
+        isRide=true;
     }
 }
