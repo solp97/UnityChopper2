@@ -9,7 +9,6 @@ public class BulletSpawner : MonoBehaviour
     public Transform Player;
     public float RotateSpeed = 4f;
     public float randomNumber;
-    public Transform BarrelEnd;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +31,7 @@ public class BulletSpawner : MonoBehaviour
             {
                 Instantiate(BulletPrefab,transform.position, transform.rotation);
                 timer = 0;
-                randomNumber = Random.Range(0f, 3f);
+                randomNumber = Random.Range(1f, 3f);
             }
         }
 

@@ -8,6 +8,7 @@ public class CameraRotate : MonoBehaviour
     public Transform Player;
     PlayerHealth playerhealth;
     public bool getAlive;
+    public bool getRide;
     private void Start()
     {
         playerhealth = GetComponent<PlayerHealth>();
