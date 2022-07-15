@@ -12,8 +12,8 @@ public class BulletSpawner : MonoBehaviour
     public float randomMin = 1f;
     public float randomMax = 3f;
     public float nowAngle;
-    public float maxAngle;
     public float minAngle;
+    public float maxAngle;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,6 @@ public class BulletSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float angle = Quaternion.Angle(transform.rotation, Target.rotation);
         timer += Time.deltaTime;
         //transform.Rotate(0f, RotateSpeed, 0f);
 
@@ -37,7 +36,7 @@ public class BulletSpawner : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         Vector3 distanceVector = Target.position - transform.position;
-        if (other.gameObject.tag =="Player" && nowAngle >= maxAngle && nowAngle <= minAngle )
+        if (other.gameObject.tag =="Player" && nowAngle >= minAngle && nowAngle <= maxAngle )
         {
             transform.LookAt(Target);
             fire();
