@@ -24,7 +24,7 @@ public class BulletSpawner : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        //transform.Rotate(0f, RotateSpeed, 0f);
+        transform.Rotate(0f, RotateSpeed, 0f);
 
         Vector3 distanceVector = Target.position - transform.position;
         nowAngle = Mathf.Atan2(distanceVector.x, distanceVector.z) * Mathf.Rad2Deg;
@@ -35,7 +35,6 @@ public class BulletSpawner : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        Vector3 distanceVector = Target.position - transform.position;
         if (other.gameObject.tag =="Player" && nowAngle >= minAngle && nowAngle <= maxAngle )
         {
             transform.LookAt(Target);
